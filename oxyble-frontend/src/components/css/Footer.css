@@ -1,0 +1,41 @@
+@import "../../constants/colors.css";
+.footer {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 10px 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 16px;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.footer-text {
+  padding: 10px 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.footer-link {
+  color: var(--secondary-color);
+  text-decoration: none;
+
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: var(--link-hover-color);
+}

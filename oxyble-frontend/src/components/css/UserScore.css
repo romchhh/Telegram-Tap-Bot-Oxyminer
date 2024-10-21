@@ -1,0 +1,21 @@
+.user-score-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: end;
+}
+.user-score-container a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+.user-score-info {
+  display: flex;
+  flex-direction: column;
+}
+.user-score-info img {
+  border-radius: 50%;
+}
+.user-score-name {
+  font-size: 16px;
+  text-decoration: underline;
+}

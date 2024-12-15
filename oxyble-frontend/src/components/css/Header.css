@@ -11,6 +11,7 @@
   align-items: center;
   max-width: 1200px;
   padding: 0 20px;
+  height: 75px;
 }
 
 .header-logo a {

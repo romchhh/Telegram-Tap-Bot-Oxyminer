@@ -1,13 +1,14 @@
 import "./css/UserScore.css";
 import { Link } from "react-router-dom";
-export default function UserScore() {
+import { User } from "../types/user";
+export default function UserScore({ user }: { user: User }) {
   return (
     <div className="user-score-container">
-      <div className="user-score">Score: 100</div>
+      <div className="user-score">Level: {user.level}</div>
       <Link to="/profile">
         <div className="user-score-info">
-          <img src="https://via.placeholder.com/50" alt="User" />
-          <div className="user-score-name">John Doe</div>
+          <img src="" alt="" />
+          <div className="user-score-name">{user.name}</div>
         </div>
       </Link>
     </div>

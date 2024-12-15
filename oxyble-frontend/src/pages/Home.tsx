@@ -1,6 +1,6 @@
 // Home.tsx
 import "./css/Home.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { User } from "../types/user";
 
@@ -34,8 +34,6 @@ export default function Home({
     } else {
       updateUser({ points: newMiningPoints });
     }
-
-    // Create tap animation
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -45,8 +43,6 @@ export default function Home({
       { id: Date.now(), value: addedPoints, position: { x, y } },
     ]);
   };
-
-  // Remove tap animation after it completes
   const removeTap = (id) => {
     setTaps((prevTaps) => prevTaps.filter((tap) => tap.id !== id));
   };

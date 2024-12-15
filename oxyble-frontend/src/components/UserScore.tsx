@@ -7,7 +7,7 @@ export default function UserScore({ user }: { user: User }) {
       <div className="user-score">Level: {user.level}</div>
       <Link to="/profile">
         <div className="user-score-info">
-          <img src="" alt="" />
+          <img src={user.avatar} alt="" />
           <div className="user-score-name">{user.name}</div>
         </div>
       </Link>

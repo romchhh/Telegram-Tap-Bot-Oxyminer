@@ -1,0 +1,30 @@
+.friends-page-header {
+  background-color: var(--primary-color);
+  color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  text-align: center;
+}
+.friends-page-discription {
+  background-color: var(--primary-color);
+  color: #f8f9fa;
+  text-align: center;
+  margin: 0 20px;
+  padding: 5px;
+  border-radius: 10px;
+}
+.friends-page-list-number {
+  color: #f8f9fa;
+  border-bottom: 3px solid var(--link-hover-color);
+  padding: 5px;
+  /* border-radius: 10px; */
+  /* margin: 10px; */
+  /* text-align: center; */
+}
+.friends-page-list {
+  padding: 15px;
+  margin: 10px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}

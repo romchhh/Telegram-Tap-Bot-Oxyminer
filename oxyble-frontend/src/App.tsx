@@ -1,5 +1,6 @@
 // App.tsx
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React from 'react';
 import { useState } from 'react';
 import Root from './pages/Root';
 import Home from './pages/Home';

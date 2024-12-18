@@ -1,21 +1,21 @@
-import "./css/RoadMapPage.css";
+import './css/RoadMapPage.css';
 
 export default function RoadMapPage() {
   const roadMap = [
     {
-      title: "Mining",
-      steps: ["Mining points!", "Leveling up your account!", "Get NFT!"],
+      title: 'Mining',
+      steps: ['Mining points!', 'Leveling up your account!', 'Get NFT!'],
     },
     {
-      title: "Friends",
-      steps: ["Add friends", "Share them your score", "Get more points!"],
+      title: 'Friends',
+      steps: ['Add friends', 'Share them your score', 'Get more points!'],
     },
     {
-      title: "Profile",
+      title: 'Profile',
       steps: [
-        "Customize your profile",
-        "Share your profile",
-        "Get more friends!",
+        'Customize your profile',
+        'Share your profile',
+        'Get more friends!',
       ],
     },
   ];

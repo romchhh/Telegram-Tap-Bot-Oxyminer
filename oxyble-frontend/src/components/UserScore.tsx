@@ -1,6 +1,6 @@
-import "./css/UserScore.css";
-import { Link } from "react-router-dom";
-import { User } from "../types/user";
+import './css/UserScore.css';
+import { Link } from 'react-router-dom';
+import { User } from '../types/user';
 export default function UserScore({ user }: { user: User }) {
   return (
     <div className="user-score-container">

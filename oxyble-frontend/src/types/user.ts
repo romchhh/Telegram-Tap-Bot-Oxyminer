@@ -1,5 +1,5 @@
-import { UserFriends } from "./userFriends";
-import { Nft } from "./nft";
+import { UserFriends } from './userFriends';
+import { Nft } from './nft';
 export interface User {
   id: number;
   name: string;

@@ -9,9 +9,9 @@ app.use(express.static(path.join(__dirname, 'oxyble-frontend/build')));
 
 // Обробка всіх запитів
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'oxyble-frontend/build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'oxyble-frontend/build', 'index.html'));
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });

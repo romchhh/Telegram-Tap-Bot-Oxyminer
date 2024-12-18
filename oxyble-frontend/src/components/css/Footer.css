@@ -1,4 +1,4 @@
-@import "../../constants/colors.css";
+@import '../../constants/colors.css';
 .footer {
   background-color: var(--primary-color);
   color: var(--secondary-color);

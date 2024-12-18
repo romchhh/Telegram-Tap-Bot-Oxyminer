@@ -38,7 +38,7 @@
 }
 
 .mining-tapper::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -20px;
   left: 50%;

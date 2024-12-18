@@ -1,5 +1,5 @@
-import { UserFriends } from "../types/userFriends";
-import "./css/FriendsPageItem.css";
+import { UserFriends } from '../types/userFriends';
+import './css/FriendsPageItem.css';
 export default function FriendsPageItem({ friend }: { friend: UserFriends }) {
   return (
     <li className="friendspage-list-item">

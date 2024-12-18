@@ -1,6 +1,6 @@
-import { User } from "../types/user";
-import FriendsPageItem from "../components/FriendsPageItem";
-import "./css/FriendsPage.css";
+import { User } from '../types/user';
+import FriendsPageItem from '../components/FriendsPageItem';
+import './css/FriendsPage.css';
 export default function FriendsPage({ user }: { user: User }) {
   return (
     <div>

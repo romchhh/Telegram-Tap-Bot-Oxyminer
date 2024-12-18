@@ -1,8 +1,8 @@
 // Home.tsx
-import "./css/Home.css";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { User } from "../types/user";
+import './css/Home.css';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { User } from '../types/user';
 
 export default function Home({
   points,
@@ -62,13 +62,13 @@ export default function Home({
                 transition={{ duration: 1 }}
                 onAnimationComplete={() => removeTap(tap.id)}
                 style={{
-                  position: "absolute",
+                  position: 'absolute',
                   left: tap.position.x,
                   top: tap.position.y,
-                  color: "white",
-                  fontSize: "24px",
-                  fontWeight: "bold",
-                  transform: "translate(-50%, -50%)",
+                  color: 'white',
+                  fontSize: '24px',
+                  fontWeight: 'bold',
+                  transform: 'translate(-50%, -50%)',
                 }}
               >
                 +{tap.value}
@@ -80,7 +80,7 @@ export default function Home({
       <div className="mining-info">
         <div>Points: {miningPoints}</div>
         <div>
-          Next Goal: {goals[user.level - 1]?.goal || "Max level reached"}
+          Next Goal: {goals[user.level - 1]?.goal || 'Max level reached'}
         </div>
       </div>
     </div>

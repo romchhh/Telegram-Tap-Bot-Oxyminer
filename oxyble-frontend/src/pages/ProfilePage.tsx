@@ -1,6 +1,6 @@
-import "./css/ProfilePage.css";
-import { User } from "../types/user";
-import { NftItem } from "../components/NftItem";
+import './css/ProfilePage.css';
+import { User } from '../types/user';
+import { NftItem } from '../components/NftItem';
 export default function ProfilePage({ user }: { user: User }) {
   return (
     <>
@@ -14,11 +14,11 @@ export default function ProfilePage({ user }: { user: User }) {
             <div className="profile-page-info-score">
               <div className="profile-page-info-level">Level: {user.level}</div>
               <div className="profile-page-info-nft">
-                {" "}
+                {' '}
                 NFTs: {user.nftList.length}
               </div>
               <div className="profile-page-info-friends">
-                {" "}
+                {' '}
                 Frinds: {user.friends.length}
               </div>
             </div>

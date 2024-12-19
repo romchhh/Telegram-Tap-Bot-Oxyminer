@@ -71,7 +71,7 @@ Telegram-Tap-Bot-Oxyminer — це інтерактивна гра для кор
      ```
    - Усі файли було переформатовано згідно з налаштуваннями, вказаними у `.prettierrc`.
 
-3. _Інтеграція Husky:_
+    7.. _Інтеграція Husky:_
    - Додано гук `pre-commit` у Husky, який запускає скрипти `lint` і `format`:
      ```bash
      npx husky add .husky/pre-commit "npm run lint && npm run format"
@@ -81,10 +81,6 @@ Telegram-Tap-Bot-Oxyminer — це інтерактивна гра для кор
      git add .
      git commit -m "Test Husky integration"
      ```
-     ```
-
-     ```
-
 ---
 
 #### Результати роботи

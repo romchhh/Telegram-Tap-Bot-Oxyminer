@@ -1,7 +1,8 @@
-import { TelegramBot } from 'node-telegram-bot-api';
+import TelegramBot from 'node-telegram-bot-api';
+
 
 // Your bot token
-const token = '6496449692:AAFWiSxoBUjzkzhf6CSIUhEPPh2MKN1Ky8s';
+const token = '8173876405:AAFyywWKU4Fur2dxmKLp5q5QkNerr9zQQYM';
 
 // Create bot
 const bot = new TelegramBot(token, { polling: true });
@@ -27,7 +28,7 @@ bot.onText(/\/start/, (msg) => {
         [
           {
             text: 'Play',
-            web_app: { url: 'https://74e4-212-90-60-201.ngrok-free.app/' }, // HTTPS URL from ngrok
+            web_app: { url: 'https://796d-77-47-209-31.ngrok-free.app' }, // HTTPS URL from ngrok
           },
         ],
         [{ text: 'Subscribe', url: 'https://t.me/your_channel' }],

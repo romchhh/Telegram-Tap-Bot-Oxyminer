@@ -1,6 +1,5 @@
 import TelegramBot from 'node-telegram-bot-api';
 
-
 // Your bot token
 const token = '8173876405:AAFyywWKU4Fur2dxmKLp5q5QkNerr9zQQYM';
 

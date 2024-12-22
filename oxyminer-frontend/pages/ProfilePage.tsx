@@ -1,6 +1,6 @@
-import "./css/ProfilePage.css";
-import { User } from "../types/user";
-import { NftItem } from "../components/NftItem";
+import './css/ProfilePage.css';
+import { User } from '../types/user';
+import { NftItem } from '../components/NftItem';
 export default function ProfilePage({ user }: { user: User }) {
   return (
     <>

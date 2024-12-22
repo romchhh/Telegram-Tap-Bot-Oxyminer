@@ -128,7 +128,7 @@ Telegram-Tap-Bot-Oxyminer — це інтерактивна гра для кор
 
 ##### **ER діаграма(буде доповніватись)**
 
-![ER Diagram](./docs/ER-Diagram.png)
+![ER Diagram](./docs/ER-diagram.png)
 
 ---
 

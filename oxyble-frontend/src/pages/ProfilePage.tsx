@@ -1,6 +1,6 @@
-import './css/ProfilePage.css';
-import { User } from '../types/user';
-import { NftItem } from '../components/NftItem';
+import "./css/ProfilePage.css";
+import { User } from "../types/user";
+import { NftItem } from "../components/NftItem";
 export default function ProfilePage({ user }: { user: User }) {
   return (
     <>
@@ -14,11 +14,9 @@ export default function ProfilePage({ user }: { user: User }) {
             <div className="profile-page-info-score">
               <div className="profile-page-info-level">Level: {user.level}</div>
               <div className="profile-page-info-nft">
-                {' '}
                 NFTs: {user.nftList.length}
               </div>
               <div className="profile-page-info-friends">
-                {' '}
                 Frinds: {user.friends.length}
               </div>
             </div>
@@ -27,8 +25,8 @@ export default function ProfilePage({ user }: { user: User }) {
         <div className="nft-list-container">
           <h1 className="nft-list-header">NFTs</h1>
           <ul className="nft-list">
-            {user.nftList.map((nft) => (
-              <NftItem nft={nft} />
+            {user.nftList.map((nft, index) => (
+              <NftItem nft={nft} key={index} />
             ))}
           </ul>
         </div>

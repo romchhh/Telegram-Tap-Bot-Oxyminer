@@ -1,9 +1,9 @@
 // Home.tsx
-import './css/Home.css';
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { User } from '../types/user';
-
+import "./css/Home.css";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { User } from "../types/user";
+import { Tap } from "../types/taps";
 export default function Home({
   points,
   goals,
@@ -16,9 +16,9 @@ export default function Home({
   updateUser: (updatedUser: Partial<User>) => void;
 }) {
   const [miningPoints, setMiningPoints] = useState(user.points);
-  const [taps, setTaps] = useState([]);
+  const [taps, setTaps] = useState<Tap[]>([]);
 
-  const handleClickTapper = (e) => {
+  const handleClickTapper = (e: React.MouseEvent<HTMLDivElement>) => {
     const currentLevel = goals.find((goal) => goal.level === user.level);
     if (!currentLevel) return;
 
@@ -43,7 +43,7 @@ export default function Home({
       { id: Date.now(), value: addedPoints, position: { x, y } },
     ]);
   };
-  const removeTap = (id) => {
+  const removeTap = (id: number) => {
     setTaps((prevTaps) => prevTaps.filter((tap) => tap.id !== id));
   };
 
@@ -62,13 +62,13 @@ export default function Home({
                 transition={{ duration: 1 }}
                 onAnimationComplete={() => removeTap(tap.id)}
                 style={{
-                  position: 'absolute',
+                  position: "absolute",
                   left: tap.position.x,
                   top: tap.position.y,
-                  color: 'white',
-                  fontSize: '24px',
-                  fontWeight: 'bold',
-                  transform: 'translate(-50%, -50%)',
+                  color: "white",
+                  fontSize: "24px",
+                  fontWeight: "bold",
+                  transform: "translate(-50%, -50%)",
                 }}
               >
                 +{tap.value}
@@ -80,7 +80,7 @@ export default function Home({
       <div className="mining-info">
         <div>Points: {miningPoints}</div>
         <div>
-          Next Goal: {goals[user.level - 1]?.goal || 'Max level reached'}
+          Next Goal: {goals[user.level - 1]?.goal || "Max level reached"}
         </div>
       </div>
     </div>

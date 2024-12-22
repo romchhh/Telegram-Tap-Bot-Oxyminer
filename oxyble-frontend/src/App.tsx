@@ -1,13 +1,12 @@
 // App.tsx
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import React from 'react';
 import { useState } from 'react';
 import Root from './pages/Root';
 import Home from './pages/Home';
 import ProfilePage from './pages/ProfilePage';
 import RoadMapPage from './pages/RoadMapPage';
 import FriendsPage from './pages/FriendsPage';
-
+import { User } from './types/user';
 export default function App() {
   const points = [1, 2, 5, 10, 25, 50, 100, 250, 500, 1000];
   const goals = [
@@ -87,7 +86,7 @@ export default function App() {
     points: 0,
   });
 
-  const updateUser = (updatedUser) => {
+  const updateUser = (updatedUser: Partial<User>) => {
     setUser((prevUser) => ({ ...prevUser, ...updatedUser }));
   };
 

@@ -273,13 +273,13 @@ Telegram-Tap-Bot-Oxyminer — це інтерактивна гра для кор
    - Запустили його локально за допомогою `node bot.js`.
    - При натискані на "Play" з'являється інтерфейс програми:
 
-      | /start | /profile | /friends |
-      |--------|----------|----------|
-      | ![/start](./docs/image1Lab4.png)  | ![Mining](./docs/image2Lab4.png) | ![RoadMap](./docs/image3Lab4.png) |
-   
-      | /nfts | /transactions |  |
-      |-------|---------------|--|
-      | ![Friends](./docs/image4Lab4.png) | ![Profile](./docs/image5Lab4.png) | |
+     | /start                           | /profile                         | /friends                          |
+     | -------------------------------- | -------------------------------- | --------------------------------- |
+     | ![/start](./docs/image1Lab4.png) | ![Mining](./docs/image2Lab4.png) | ![RoadMap](./docs/image3Lab4.png) |
+
+     | /nfts                             | /transactions                     |     |
+     | --------------------------------- | --------------------------------- | --- |
+     | ![Friends](./docs/image4Lab4.png) | ![Profile](./docs/image5Lab4.png) |     |
 
 ---
 

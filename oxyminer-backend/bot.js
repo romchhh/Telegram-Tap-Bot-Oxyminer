@@ -26,7 +26,7 @@ bot.onText(/\/start/, (msg) => {
       inline_keyboard: [
         [
           {
-            text: 'Play',
+            text: 'Tap to Play',
             web_app: { url: 'https://1b01-77-47-209-31.ngrok-free.app' }, // HTTPS URL from ngrok
           },
         ],

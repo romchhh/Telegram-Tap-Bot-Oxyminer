@@ -6,7 +6,8 @@
   "scripts": {
     "test": "eslint .",
     "start": "node server.js",
-    "format": "prettier --write .",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
     "prepare": "husky install",
     "lint": "eslint . --fix",
     "dev": "vite",

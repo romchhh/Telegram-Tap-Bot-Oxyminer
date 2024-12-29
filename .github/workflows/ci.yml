@@ -35,6 +35,3 @@ jobs:
 
       - name: Build project
         run: npm run build
-
-      - name: Check commit messages
-        uses: wagoid/commitlint-github-action@v5

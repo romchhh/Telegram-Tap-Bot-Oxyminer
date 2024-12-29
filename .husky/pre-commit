@@ -1,2 +1,2 @@
 npm test
-npm run format && npx eslint .
+npm run format:fix && npx eslint .

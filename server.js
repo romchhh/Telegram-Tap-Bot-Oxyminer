@@ -1,4 +1,5 @@
 import express from 'express';
+
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { sequelize, User } from './db.js'; // Ваші моделі
@@ -6,8 +7,10 @@ import { sequelize, User } from './db.js'; // Ваші моделі
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const app = express();
-const port = 3000;
+export const app = express();
+
+const port = process.env.PORT || 3000; // Порт можна задавати через ENV
+
 
 // Шлях до зібраного React-додатка
 const reactBuildPath = path.join(__dirname, 'dist');
@@ -72,7 +75,7 @@ app.get('*', (req, res) => {
 });
 
 // Запуск сервера
-app.listen(port, async () => {
+const server = app.listen(port, async () => {
   console.log(`Server is running on http://localhost:${port}`);
   console.log('React build path:', reactBuildPath);
 
@@ -84,3 +87,7 @@ app.listen(port, async () => {
     console.error('Unable to connect to the database:', err);
   }
 });
+
+export { server };
+
+

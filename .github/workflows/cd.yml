@@ -10,25 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Клонування репозиторію
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Встановлення Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
-      # Встановлення залежностей
       - name: Install dependencies
         run: npm install
 
-      # Збірка додатку
-      - name: Build application
+      - name: Build project
         run: npm run build
 
-      # Розгортання додатку на сервері через SSH
       - name: Deploy to server
         uses: appleboy/ssh-action@v0.1.6
         with:

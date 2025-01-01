@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: '16'
 
       - name: Install dependencies
         run: npm install
@@ -24,15 +24,9 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to server
-        uses: appleboy/ssh-action@v0.1.6
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v20
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd /var/www/myapp
-            git pull origin main
-            npm install
-            npm run build
-            pm2 restart all
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}

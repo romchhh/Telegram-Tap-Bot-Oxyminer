@@ -23,7 +23,7 @@ jobs:
       # Крок 3: Копіювання коду на сервер
       - name: Deploy to server
         run: |
-          ssh -o StrictHostKeyChecking=no user@your-server-ip << 'EOF'
+          ssh -o StrictHostKeyChecking=no http://localhost:3000/ << 'EOF'
             cd ~/apps/telegram-tap-bot-oxyminer
             git reset --hard
             git pull origin master

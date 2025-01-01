@@ -8,22 +8,36 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
+      # Клонування репозиторію
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Встановлення Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
+      # Встановлення залежностей
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
+      # Збірка додатку
+      - name: Build application
         run: npm run build
 
-      - name: Deploy to Render
-        run: |
-          curl -X POST https://api.render.com/deploy \
-          -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}"
+      # Розгортання додатку на сервері через SSH
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/myapp
+            git pull origin main
+            npm install
+            npm run build
+            pm2 restart all

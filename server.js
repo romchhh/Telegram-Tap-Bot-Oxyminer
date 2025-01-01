@@ -4,7 +4,6 @@ import { fileURLToPath } from 'url';
 import { sequelize, User } from './db.js'; // Ваші моделі
 import cors from 'cors';
 
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 

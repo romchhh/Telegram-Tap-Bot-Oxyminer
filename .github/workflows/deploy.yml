@@ -1,0 +1,34 @@
+name: CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Крок 1: Клонування репозиторію
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Крок 2: Налаштування SSH для сервера
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # Крок 3: Копіювання коду на сервер
+      - name: Deploy to server
+        run: |
+          ssh -o StrictHostKeyChecking=no user@your-server-ip << 'EOF'
+            cd ~/apps/telegram-tap-bot-oxyminer
+            git reset --hard
+            git pull origin master
+            npm install
+            npm run build
+            pm2 restart telegram-tap-bot-oxyminer || pm2 start server.js --name telegram-tap-bot-oxyminer
+            pm2 save
+          EOF

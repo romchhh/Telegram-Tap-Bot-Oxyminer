@@ -27,7 +27,7 @@ bot.onText(/\/start/, (msg) => {
         [
           {
             text: 'Tap to Play',
-            web_app: { url: 'https://f2b0-77-47-209-31.ngrok-free.app' }, // HTTPS URL from ngrok
+            web_app: { url: 'https://ad0b-91-196-82-18.ngrok-free.app' }, // HTTPS URL from ngrok
           },
         ],
         [{ text: 'Subscribe', url: 'https://t.me/your_channel' }],

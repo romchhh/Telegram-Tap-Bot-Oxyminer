@@ -1,8 +1,9 @@
 import express from 'express';
-
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { sequelize, User } from './db.js'; // Ваші моделі
+import cors from 'cors';
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -10,7 +11,7 @@ const __dirname = path.dirname(__filename);
 export const app = express();
 
 const port = process.env.PORT || 3000; // Порт можна задавати через ENV
-
+app.use(cors());
 // Шлях до зібраного React-додатка
 const reactBuildPath = path.join(__dirname, 'dist');
 

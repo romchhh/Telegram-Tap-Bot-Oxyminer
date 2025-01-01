@@ -1,7 +1,12 @@
 import { User } from '../types/user';
 import FriendsPageItem from '../components/FriendsPageItem';
 import './css/FriendsPage.css';
+
 export default function FriendsPage({ user }: { user: User }) {
+  if (!user.friends || !Array.isArray(user.friends)) {
+    user.friends = []; // Встановлюємо порожній масив, якщо friends не визначений
+  }
+
   return (
     <div>
       <div>

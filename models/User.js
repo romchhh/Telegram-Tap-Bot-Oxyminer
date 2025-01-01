@@ -1,4 +1,6 @@
 import { sequelize, DataTypes } from '../db.js';
+import NFT from './NFT.js';
+import Friend from './Friend.js';
 
 const User = sequelize.define(
   'User',
@@ -29,5 +31,12 @@ const User = sequelize.define(
     timestamps: false,
   },
 );
+
+// Зв'язки
+User.hasMany(NFT, { foreignKey: 'userId', onDelete: 'CASCADE' });
+NFT.belongsTo(User, { foreignKey: 'userId' });
+
+User.hasMany(Friend, { foreignKey: 'userId', onDelete: 'CASCADE' });
+Friend.belongsTo(User, { foreignKey: 'userId' });
 
 export default User;

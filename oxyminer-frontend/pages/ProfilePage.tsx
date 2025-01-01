@@ -1,7 +1,15 @@
 import './css/ProfilePage.css';
 import { User } from '../types/user';
 import { NftItem } from '../components/NftItem';
+
 export default function ProfilePage({ user }: { user: User }) {
+  if (!user.nftList || !Array.isArray(user.nftList)) {
+    user.nftList = []; // Встановлюємо порожній масив, якщо nftList не визначений
+  }
+  if (!user.friends || !Array.isArray(user.friends)) {
+    user.friends = []; // Встановлюємо порожній масив, якщо friends не визначений
+  }
+
   return (
     <>
       <div className="profile-page">
@@ -17,7 +25,7 @@ export default function ProfilePage({ user }: { user: User }) {
                 NFTs: {user.nftList.length}
               </div>
               <div className="profile-page-info-friends">
-                Frinds: {user.friends.length}
+                Friends: {user.friends.length}
               </div>
             </div>
           </div>

@@ -21,7 +21,7 @@ export class UserService {
         name: { type: DataTypes.STRING, allowNull: false },
         points: { type: DataTypes.INTEGER, defaultValue: 0 },
       },
-      { sequelize: this.sequelize, modelName: 'User' }
+      { sequelize: this.sequelize, modelName: 'User' },
     );
   }
 

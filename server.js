@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { sequelize, User } from './db.js'; 
+import { sequelize, User } from './db.js';
 import cors from 'cors';
 import { UserService } from './user-service/index.js';
 
@@ -31,7 +31,7 @@ const userService = new UserService(userRepository);
 
 export const app = express();
 
-const port = process.env.PORT || 3000; 
+const port = process.env.PORT || 3000;
 app.use(cors());
 
 // Шлях до зібраного React-додатка
@@ -71,7 +71,9 @@ app.patch('/api/users/:id/points', async (req, res) => {
     }
 
     const user = await userService.updateUser(req.params.id, { points });
-    user ? res.json({ points: user.points }) : res.status(404).send('User not found');
+    user
+      ? res.json({ points: user.points })
+      : res.status(404).send('User not found');
   } catch (err) {
     console.error('Error updating points:', err);
     res.status(500).send('Error updating points');

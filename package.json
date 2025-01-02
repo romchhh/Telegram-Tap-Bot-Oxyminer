@@ -31,7 +31,8 @@
     "react-icons": "^5.4.0",
     "react-router-dom": "^6.27.0",
     "sequelize": "^6.37.5",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "user-service": "file:user-service"
   },
   "description": "",
   "devDependencies": {
@@ -42,8 +43,10 @@
     "@stryker-mutator/core": "^8.7.1",
     "@stryker-mutator/jest-runner": "^8.7.1",
     "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.3",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "@types/sequelize": "^4.28.20",
     "@types/supertest": "^6.0.2",
     "@vitejs/plugin-react": "^4.3.4",
     "compare-func": "^2.0.0",

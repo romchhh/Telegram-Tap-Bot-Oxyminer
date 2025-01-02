@@ -1,16 +1,39 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { sequelize, User } from './db.js'; // Ваші моделі
+import { sequelize, User } from './db.js'; 
 import cors from 'cors';
+import { UserService } from './user-service/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Ініціалізація userRepository
+const userRepository = {
+  async getById(id) {
+    return await User.findByPk(id);
+  },
+  async update(id, data) {
+    const user = await User.findByPk(id);
+    if (user) {
+      await user.update(data);
+      return user;
+    }
+    return null;
+  },
+  async create(data) {
+    return await User.create(data);
+  },
+};
+
+// Ініціалізація userService
+const userService = new UserService(userRepository);
+
 export const app = express();
 
-const port = process.env.PORT || 3000; // Порт можна задавати через ENV
+const port = process.env.PORT || 3000; 
 app.use(cors());
+
 // Шлях до зібраного React-додатка
 const reactBuildPath = path.join(__dirname, 'dist');
 
@@ -20,7 +43,7 @@ app.use(express.json());
 // API: Отримання користувача
 app.get('/api/users/:id', async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id);
+    const user = await userService.getUserById(req.params.id);
     user ? res.json(user) : res.status(404).send('User not found');
   } catch (err) {
     console.error('Error fetching user:', err);
@@ -31,13 +54,8 @@ app.get('/api/users/:id', async (req, res) => {
 // API: Оновлення даних користувача
 app.patch('/api/users/:id', async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id);
-    if (user) {
-      await user.update(req.body);
-      res.json(user);
-    } else {
-      res.status(404).send('User not found');
-    }
+    const user = await userService.updateUser(req.params.id, req.body);
+    user ? res.json(user) : res.status(404).send('User not found');
   } catch (err) {
     console.error('Error updating user:', err);
     res.status(500).send('Error updating user');
@@ -47,18 +65,13 @@ app.patch('/api/users/:id', async (req, res) => {
 // API: Оновлення points користувача
 app.patch('/api/users/:id/points', async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id);
-    if (!user) return res.status(404).send('User not found');
-
     const { points } = req.body;
     if (typeof points !== 'number') {
       return res.status(400).send('Invalid points value. Must be a number.');
     }
 
-    user.points = points;
-    await user.save();
-
-    res.json({ points: user.points });
+    const user = await userService.updateUser(req.params.id, { points });
+    user ? res.json({ points: user.points }) : res.status(404).send('User not found');
   } catch (err) {
     console.error('Error updating points:', err);
     res.status(500).send('Error updating points');

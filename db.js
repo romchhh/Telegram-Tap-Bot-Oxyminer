@@ -1,9 +1,8 @@
 import { Sequelize, DataTypes } from 'sequelize';
 
 export const sequelize = new Sequelize('sqlite:./database.db', {
-  logging: (msg) => console.log(`[SQL]: ${msg}`), 
+  logging: (msg) => console.log(`[SQL]: ${msg}`),
 });
-
 
 // Модель користувача
 export const User = sequelize.define('User', {
